@@ -1,61 +1,74 @@
 package annaikanyouzoo.com.outerspacemanager.outerspacemanager.array_adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import annaikanyouzoo.com.outerspacemanager.outerspacemanager.R;
+import annaikanyouzoo.com.outerspacemanager.outerspacemanager.listeners.OnBuyListener;
 import annaikanyouzoo.com.outerspacemanager.outerspacemanager.models.Building;
+import annaikanyouzoo.com.outerspacemanager.outerspacemanager.view_holders.BuildingViewHolder;
 
 /**
  * Created by annaikanyouzoo on 07/03/2017.
  */
 
-public class BuildingsArrayAdapter extends ArrayAdapter<Building> {
+public class BuildingsArrayAdapter extends RecyclerView.Adapter<BuildingViewHolder>{
+
 
     private final Context context;
+    private final OnBuyListener buyListener;
     private final List<Building> buildings;
+    private final LayoutInflater inflater;
 
-    public BuildingsArrayAdapter(Context context, List<Building> buildings) {
-        super(context, -1, buildings);
+    public BuildingsArrayAdapter(Context context, List<Building> buildings, OnBuyListener listener) {
+        inflater = LayoutInflater.from(context);
+        buyListener = listener;
         this.context = context;
         this.buildings = buildings;
     }
 
+    // Create new views (invoked by the layout manager)
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public BuildingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // create a new view
+        View view = inflater.inflate(R.layout.row_shop_building_ship, parent, false);
+        BuildingViewHolder vh = new BuildingViewHolder(view, buyListener);
+        return vh;
+    }
 
-        // Récupération des composants
-        View rowView = inflater.inflate(R.layout.buildings_list_row, parent, false);
-        TextView tvName = (TextView) rowView.findViewById(R.id.tvName);
-        TextView tvGasCost = (TextView) rowView.findViewById(R.id.tvGasCostAmount);
-        TextView tvMineralCost = (TextView) rowView.findViewById(R.id.tvMineralCostAmount);
-        ImageView ivImg = (ImageView) rowView.findViewById(R.id.ivImg);
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(BuildingViewHolder vh, int position) {
 
-        Building building = buildings.get(position);
+        Building current = buildings.get(position);
 
-        tvName.setText(building.getName());
-        tvGasCost.setText((""+building.getGasCostByLevel()));
-        tvMineralCost.setText((""+building.getMineralCostByLevel()));
+        // - get element from your dataset at this position
+        // - replace the contents of the view with that element
+        vh.tvName.setText(current.getName());
+        vh.tvGasCostAmount.setText(""+current.getGasCost());
+        vh.tvMineralCostAmount.setText(""+current.getMineralCost());
 
         Glide
                 .with(context)
-                .load(building.getImageUrl())
+                .load(current.getImageUrl())
                 .crossFade()
-                .into(ivImg);
+                .into(vh.ivImg);
 
-        return rowView;
     }
 
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount() {
+
+        return buildings.size();
+
+    }
 
 }

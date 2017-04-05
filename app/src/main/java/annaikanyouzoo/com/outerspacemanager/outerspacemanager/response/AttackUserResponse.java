@@ -6,13 +6,24 @@ package annaikanyouzoo.com.outerspacemanager.outerspacemanager.response;
 
 public class AttackUserResponse {
 
-    private String internalCode;
+    private String code;
+    private int attackTime;
 
-    public String getInternalCode() {
-        return internalCode;
+    public String getCode() {
+        return code;
     }
 
-    public void setInternalCode(String internalCode) {
-        this.internalCode = internalCode;
+    public void setCode(String internalCode) {
+        this.code = code;
+    }
+
+    public int getAttackTime() {
+        return attackTime;
+    }
+
+    public void setAttackTime(int attackTime) {
+
+        this.attackTime = attackTime;
+
     }
 }

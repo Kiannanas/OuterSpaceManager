@@ -31,6 +31,7 @@ public class UserActivity extends AppCompatActivity {
             .baseUrl("https://outer-space-manager.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+    private OuterSpaceService service = retrofit.create(OuterSpaceService.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class UserActivity extends AppCompatActivity {
         this.tvUsername = (TextView) findViewById(R.id.tvUsername);
         this.tvPointsValue = (TextView) findViewById(R.id.tvPointsValue);
         this.tvGasModifierValue = (TextView) findViewById(R.id.tvGasModifierValue);
-        this.tvGasValue = (TextView) findViewById(R.id.tvMineralsModifierValue);
+        this.tvGasValue = (TextView) findViewById(R.id.tvGasValue);
         this.tvMineralsModifierValue = (TextView) findViewById(R.id.tvMineralsModifierValue);
         this.tvMineralsValue = (TextView) findViewById(R.id.tvMineralsValue);
 
@@ -50,8 +51,7 @@ public class UserActivity extends AppCompatActivity {
         String token = settings.getString("token", null);
 
         // On récupère les infos du joueur correspondant au token
-        OuterSpaceService service = retrofit.create(OuterSpaceService.class);
-        Call<User> request = service.getUser(token);
+        Call<User> request = service.getCurrentUser(token);
         request.enqueue(new Callback<User>() {
 
             @Override

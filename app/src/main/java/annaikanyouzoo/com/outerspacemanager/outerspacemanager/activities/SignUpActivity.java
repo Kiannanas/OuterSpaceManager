@@ -25,6 +25,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private TextView tvUsername;
     private TextView tvPassword;
     private EditText etUsername;
+    private EditText etEmail;
     private EditText etPassword;
     private Button btnRegister;
     private Button btnLogin;
@@ -43,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         // Récupération des composants
         etUsername = (EditText) findViewById(R.id.etUsername);
+        etEmail = (EditText) findViewById(R.id.etEmail);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnLogin = (Button) findViewById(R.id.btnLogin);
@@ -72,11 +74,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btnRegister :
 
                 String username = etUsername.getText().toString();
+                String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
-                if(( username != "" || username != null) && ( password != "" || username != null)){
-                    Log.d("App", "username + password OK");
-                    User user = new User(username, password);
+                if(( username != "" || username != null) && ( password != "" || username != null) && ( email != "" || email != null)){
+                    Log.d("OuterSpaceManager", "username + email + password OK");
+                    User user = new User(username, email, password);
 
                     OuterSpaceService service = retrofit.create(OuterSpaceService.class);
                     Call<User> request = service.newUser(user);
@@ -86,7 +89,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         public void onResponse(Call<User> call, Response<User> response) {
 
                             if(response.errorBody()!= null){
-                                Log.d("App", "onFailure: Echec de l'inscription.");
+                                Log.d("OuterSpaceManager", "onFailure: Echec de l'inscription.");
                                 // on affiche le feedback comme quoi la création du compte a échoué
                                 Toast.makeText(getApplicationContext(),response.errorBody().toString(),Toast.LENGTH_SHORT).show();
                             } else {

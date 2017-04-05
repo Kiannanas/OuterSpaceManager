@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="material_dark_orange_light" parent="Theme.AppCompat.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@android:color/holo_orange_light</item>
+        <item name="colorPrimary">@android:color/holo_orange_light</item>
+        <item name="android:colorForeground">@android:color/black</item>
+    </style>
+</resources>

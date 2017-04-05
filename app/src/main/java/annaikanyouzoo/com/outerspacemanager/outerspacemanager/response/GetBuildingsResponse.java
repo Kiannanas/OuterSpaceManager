@@ -2,7 +2,7 @@ package annaikanyouzoo.com.outerspacemanager.outerspacemanager.response;
 
 import java.util.List;
 
-import annaikanyouzoo.com.outerspacemanager.outerspacemanager.Building;
+import annaikanyouzoo.com.outerspacemanager.outerspacemanager.models.Building;
 
 /**
  * Created by annaikanyouzoo on 07/03/2017.

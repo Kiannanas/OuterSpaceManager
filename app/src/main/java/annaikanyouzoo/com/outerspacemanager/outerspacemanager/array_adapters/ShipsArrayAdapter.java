@@ -1,51 +1,66 @@
 package annaikanyouzoo.com.outerspacemanager.outerspacemanager.array_adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import java.util.List;
 
 import annaikanyouzoo.com.outerspacemanager.outerspacemanager.R;
+import annaikanyouzoo.com.outerspacemanager.outerspacemanager.listeners.OnBuyListener;
 import annaikanyouzoo.com.outerspacemanager.outerspacemanager.models.Ship;
+import annaikanyouzoo.com.outerspacemanager.outerspacemanager.view_holders.ShipViewHolder;
 
 /**
  * Created by annaikanyouzoo on 07/03/2017.
  */
 
-public class ShipsArrayAdapter extends ArrayAdapter<Ship> {
+public class ShipsArrayAdapter extends RecyclerView.Adapter<ShipViewHolder> {
 
     private final Context context;
+    private final OnBuyListener buyListener;
     private final List<Ship> ships;
+    private final LayoutInflater inflater;
 
-    public ShipsArrayAdapter(Context context, List<Ship> ships) {
-        super(context, -1, ships);
+    public ShipsArrayAdapter(Context context, List<Ship> ships, OnBuyListener listener) {
+        inflater = LayoutInflater.from(context);
+        buyListener = listener;
         this.context = context;
         this.ships = ships;
     }
 
+    // Create new views (invoked by the layout manager)
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
-        // Récupération des composants
-        View rowView = inflater.inflate(R.layout.ships_list_row, parent, false);
-        TextView tvName = (TextView) rowView.findViewById(R.id.tvName);
-        TextView tvGasCost = (TextView) rowView.findViewById(R.id.tvGasCostValue);
-        TextView tvMineralCost = (TextView) rowView.findViewById(R.id.tvMineralCostValue);
-
-        Ship ship = ships.get(position);
-
-        tvName.setText(ship.getName());
-        tvGasCost.setText((""+ship.getGasCost()));
-        tvMineralCost.setText((""+ship.getMineralCost()));
-
-        return rowView;
+    public ShipViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // create a new view
+        View view = inflater.inflate(R.layout.row_shop_building_ship, parent, false);
+        ShipViewHolder vh = new ShipViewHolder(view, buyListener);
+        return vh;
     }
 
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(ShipViewHolder vh, int position) {
+
+        Ship current = ships.get(position);
+
+        // - get element from your dataset at this position
+        // - replace the contents of the view with that element
+        vh.ivImg.setImageResource(R.drawable.chasseur_leger);
+        vh.tvName.setText(current.getName());
+        vh.tvGasCostAmount.setText(""+current.getGasCost());
+        vh.tvMineralCostAmount.setText(""+current.getMineralCost());
+
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount() {
+
+        return ships.size();
+
+    }
 
 }

@@ -1,38 +1,35 @@
 package annaikanyouzoo.com.outerspacemanager.outerspacemanager.models;
 
+import java.util.UUID;
+
 /**
  * Created by annaikanyouzoo on 14/03/2017.
  */
 
 public class Search {
 
-    private int amountOfEffectByLevel;
-    private int amountOfEffectLevel0;
+    private UUID uuid;
     private boolean building;
-    private String effect;
-    private int gasCostbyLevel;
-    private int getGasCostLevel0;
-    private int level;
-    private int mineralCostByLevel;
-    private int mineralCostLevel0;
     private String name;
-    private int timeToBuildByLevel;
+    private int level;
+    private String effect;
+    private int amountOfEffectLevel0;
+    private int amountOfEffectByLevel;
+    private int gasCostLevel0;
+    private int gasCostByLevel;
+    private int mineralCostLevel0;
+    private int mineralCostByLevel;
     private int timeToBuildLevel0;
+    private int timeToBuildByLevel;
+    private int searchStart;
+    private int searchEnd;
 
-    public int getAmountOfEffectByLevel() {
-        return amountOfEffectByLevel;
+    public UUID getUUID() {
+        return uuid;
     }
 
-    public void setAmountOfEffectByLevel(int amountOfEffectByLevel) {
-        this.amountOfEffectByLevel = amountOfEffectByLevel;
-    }
-
-    public int getAmountOfEffectLevel0() {
-        return amountOfEffectLevel0;
-    }
-
-    public void setAmountOfEffectLevel0(int amountOfEffectLevel0) {
-        this.amountOfEffectLevel0 = amountOfEffectLevel0;
+    public void setUUID(UUID uuid) {
+        this.uuid = uuid;
     }
 
     public boolean isBuilding() {
@@ -43,28 +40,12 @@ public class Search {
         this.building = building;
     }
 
-    public String getEffect() {
-        return effect;
+    public String getName() {
+        return name;
     }
 
-    public void setEffect(String effect) {
-        this.effect = effect;
-    }
-
-    public int getGasCostbyLevel() {
-        return gasCostbyLevel;
-    }
-
-    public void setGasCostbyLevel(int gasCostbyLevel) {
-        this.gasCostbyLevel = gasCostbyLevel;
-    }
-
-    public int getGetGasCostLevel0() {
-        return getGasCostLevel0;
-    }
-
-    public void setGetGasCostLevel0(int getGasCostLevel0) {
-        this.getGasCostLevel0 = getGasCostLevel0;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getLevel() {
@@ -73,6 +54,46 @@ public class Search {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public String getEffect() {
+        return effect;
+    }
+
+    public void setEffect(String effect) {
+        this.effect = effect;
+    }
+
+    public int getAmountOfEffectLevel0() {
+        return amountOfEffectLevel0;
+    }
+
+    public void setAmountOfEffectLevel0(int amountOfEffectLevel0) {
+        this.amountOfEffectLevel0 = amountOfEffectLevel0;
+    }
+
+    public int getAmountOfEffectByLevel() {
+        return amountOfEffectByLevel;
+    }
+
+    public void setAmountOfEffectByLevel(int amountOfEffectByLevel) {
+        this.amountOfEffectByLevel = amountOfEffectByLevel;
+    }
+
+    public int getGasCostLevel0() {
+        return gasCostLevel0;
+    }
+
+    public void setGasCostLevel0(int gasCostLevel0) {
+        this.gasCostLevel0 = gasCostLevel0;
+    }
+
+    public int getGasCostByLevel() {
+        return gasCostByLevel;
+    }
+
+    public void setGasCostByLevel(int gasCostByLevel) {
+        this.gasCostByLevel = gasCostByLevel;
     }
 
     public int getMineralCostLevel0() {
@@ -91,12 +112,12 @@ public class Search {
         this.mineralCostByLevel = mineralCostByLevel;
     }
 
-    public String getName() {
-        return name;
+    public int getTimeToBuildLevel0() {
+        return timeToBuildLevel0;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTimeToBuildLevel0(int timeToBuildLevel0) {
+        this.timeToBuildLevel0 = timeToBuildLevel0;
     }
 
     public int getTimeToBuildByLevel() {
@@ -107,11 +128,19 @@ public class Search {
         this.timeToBuildByLevel = timeToBuildByLevel;
     }
 
-    public int getTimeToBuildLevel0() {
-        return timeToBuildLevel0;
+    public int getSearchStart() {
+        return searchStart;
     }
 
-    public void setTimeToBuildLevel0(int timeToBuildLevel0) {
-        this.timeToBuildLevel0 = timeToBuildLevel0;
+    public void setSearchStart(int searchStart) {
+        this.searchStart = searchStart;
+    }
+
+    public int getSearchEnd() {
+        return searchEnd;
+    }
+
+    public void setSearchEnd(int searchEnd) {
+        this.searchEnd = searchEnd;
     }
 }

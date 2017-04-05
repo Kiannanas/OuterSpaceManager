@@ -2,8 +2,6 @@ package annaikanyouzoo.com.outerspacemanager.outerspacemanager.models;
 
 import java.util.List;
 
-import annaikanyouzoo.com.outerspacemanager.outerspacemanager.ShipAmount;
-
 /**
  * Created by annaikanyouzoo on 14/03/2017.
  */

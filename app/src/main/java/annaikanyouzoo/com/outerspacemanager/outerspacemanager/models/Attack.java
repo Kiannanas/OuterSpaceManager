@@ -1,6 +1,7 @@
 package annaikanyouzoo.com.outerspacemanager.outerspacemanager.models;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by annaikanyouzoo on 14/03/2017.
@@ -8,23 +9,90 @@ import java.util.List;
 
 public class Attack {
 
-    private List<ShipsIdAmount> attackerFleet;
-    private FleetAfterBattle attackerFleetAfterBattle;
-    private int date;
-    private int dateInv;
-    private List<ShipsIdAmount> defenderFleet;
-    private FleetAfterBattle defenderFleetAfterBattle;
+    private UUID uuid;
+    private String type;
     private String from;
+    private String to;
+    private long date;
+    private long dateInv;
     private int gasWon;
     private int mineralsWon;
-    private String to;
-    private String type;
+    private List<ShipAmount> attackerFleet;
+    private FleetAfterBattle attackerFleetAfterBattle;
+    private List<ShipAmount> defenderFleet;
+    private FleetAfterBattle defenderFleetAfterBattle;
+    private int attackStart;
+    private int attackEnd;
 
-    public List<ShipsIdAmount> getAttackerFleet() {
+    public UUID getUUID() {
+        return uuid;
+    }
+
+    public void setUUID(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getFrom() {
+        return from;
+    }
+
+    public void setFrom(String from) {
+        this.from = from;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
+
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
+    }
+
+    public long getDateInv() {
+        return dateInv;
+    }
+
+    public void setDateInv(long dateInv) {
+        this.dateInv = dateInv;
+    }
+
+    public int getMineralsWon() {
+        return mineralsWon;
+    }
+
+    public void setMineralsWon(int mineralsWon) {
+        this.mineralsWon = mineralsWon;
+    }
+
+    public int getGasWon() {
+        return gasWon;
+    }
+
+    public void setGasWon(int gasWon) {
+        this.gasWon = gasWon;
+    }
+
+    public List<ShipAmount> getAttackerFleet() {
         return attackerFleet;
     }
 
-    public void setAttackerFleet(List<ShipsIdAmount> attackerFleet) {
+    public void setAttackerFleet(List<ShipAmount> attackerFleet) {
         this.attackerFleet = attackerFleet;
     }
 
@@ -36,27 +104,11 @@ public class Attack {
         this.attackerFleetAfterBattle = attackerFleetAfterBattle;
     }
 
-    public int getDate() {
-        return date;
-    }
-
-    public void setDate(int date) {
-        this.date = date;
-    }
-
-    public int getDateInv() {
-        return dateInv;
-    }
-
-    public void setDateInv(int dateInv) {
-        this.dateInv = dateInv;
-    }
-
-    public List<ShipsIdAmount> getDefenderFleet() {
+    public List<ShipAmount> getDefenderFleet() {
         return defenderFleet;
     }
 
-    public void setDefenderFleet(List<ShipsIdAmount> defenderFleet) {
+    public void setDefenderFleet(List<ShipAmount> defenderFleet) {
         this.defenderFleet = defenderFleet;
     }
 
@@ -68,43 +120,19 @@ public class Attack {
         this.defenderFleetAfterBattle = defenderFleetAfterBattle;
     }
 
-    public String getFrom() {
-        return from;
+    public int getAttackStart() {
+        return attackStart;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setAttackStart(int attackStart) {
+        this.attackStart = attackStart;
     }
 
-    public int getGasWon() {
-        return gasWon;
+    public int getAttackEnd() {
+        return attackEnd;
     }
 
-    public void setGasWon(int gasWon) {
-        this.gasWon = gasWon;
-    }
-
-    public int getMineralsWon() {
-        return mineralsWon;
-    }
-
-    public void setMineralsWon(int mineralsWon) {
-        this.mineralsWon = mineralsWon;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getTo() {
-        return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
+    public void setAttackEnd(int attackEnd) {
+        this.attackEnd = attackEnd;
     }
 }

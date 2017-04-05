@@ -71,9 +71,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void onResponse(Call<User> call, Response<User> response) {
 
                         if(response.errorBody()!= null){
-                            Log.d("App", "onFailure: Echec de l'inscription.");
+                            Log.d("App", "onFailure: Echec de l'authentification.");
                             // on affiche le feedback comme quoi la création du compte a échoué
-                            Toast.makeText(getApplicationContext(),response.errorBody().toString(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Echec de l'authentification",Toast.LENGTH_SHORT).show();
                         } else {
                             // on sauvegarde le token dans les SharedPreferences
                             SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);

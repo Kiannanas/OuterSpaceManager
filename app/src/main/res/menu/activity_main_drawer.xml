@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_user_stats"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Mes stats"/>
+        <item
+            android:id="@+id/nav_user_army"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Mon armée"/>
+        <item
+            android:id="@+id/nav_searches"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Recherches"/>
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Shop"/>
+        <item
+            android:id="@+id/nav_galaxy"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Galaxie"/>
+        <item
+            android:id="@+id/nav_attacks"
+            android:icon="@android:drawable/ic_menu_search"
+            android:title="Attaques"/>
+    </group>
+
+    <item android:title="Compte">
+        <menu>
+            <item
+                android:id="@+id/nav_change_account"
+                android:icon="@android:drawable/ic_delete"
+                android:title="Changer de compte"/>
+            <item
+                android:id="@+id/nav_deconnect"
+                android:icon="@android:drawable/ic_delete"
+                android:title="Déconnexion"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Outer Space Manager</string>
+    <string name="action_search">Rechercher</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="nav_drawer_open">Ouvrir le menu</string>
+    <string name="nav_drawer_close">Fermer le menu</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

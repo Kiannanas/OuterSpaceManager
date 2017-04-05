@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_for_fragment"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="annaikanyouzoo.com.outerspacemanager.outerspacemanager.activities.MainActivity">
+
+    <TextView
+        android:id="@+id/tvUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="24sp"
+        android:textColor="@color/colorAccent"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/tvPointsAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="40dp" />
+
+    <Button
+        android:id="@+id/btnGeneralView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VUE GENERALE"/>
+
+    <Button
+        android:id="@+id/btnBuildings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BATIMENTS"/>
+
+    <Button
+        android:id="@+id/btnFleet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FLOTTE"/>
+
+    <Button
+        android:id="@+id/btnResearches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RECHERCHES"/>
+
+    <Button
+        android:id="@+id/btnSpatialSite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHANTIER SPATIAL"/>
+
+    <Button
+        android:id="@+id/btnGalaxy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GALAXIE"/>
+
+    <Button
+        android:id="@+id/btnDeconnect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DECONNEXION"
+        android:background="@color/colorAccent" />
+
+</LinearLayout>
